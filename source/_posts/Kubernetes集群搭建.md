@@ -5,7 +5,7 @@ updated: 2021-09-14 15:24:00
 tags:
     - Kubernetes
 categories:
-comments: false
+comments: true
 ---
 
 这次打算尝试使用`kubeadm`来从头搭建一个`Kubernetes集群`，并且记录下整个过程以及中途遇到的问题。

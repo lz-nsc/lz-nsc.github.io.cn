@@ -44,14 +44,14 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-    enable: true
+    enable: false
     line_number: true
     auto_detect: false
     tab_replace: ''
     wrap: true
     hljs: false
 prismjs:
-    enable: false
+    enable: true
     preprocess: true
     line_number: true
     tab_replace: ''
@@ -97,11 +97,11 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: paper
+theme: kaze
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
     type: git
-    repo: https://github.com/lz-nsc/lz-nsc.github.io.git
+    repo: git@github.com:lz-nsc/lz-nsc.github.io.git
     branch: master
