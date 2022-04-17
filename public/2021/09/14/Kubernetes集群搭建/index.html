@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ch">
+<html lang="zh-CN">
   <head>
   <meta charset="UTF-8">
   <meta 
@@ -28,7 +28,7 @@
     
       <meta 
         property="og:url" 
-        content="http://example.com/2021/09/14/Kubernetes%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/index.html">
+        content="http://lzreload.com/2021/09/14/Kubernetes%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/index.html">
     
     
       <meta 
@@ -222,7 +222,7 @@
         href="/" 
         class="navbar-menu-item">
         
-          Home
+          首页
         
       </a>
     
@@ -230,7 +230,7 @@
         href="/archives" 
         class="navbar-menu-item">
         
-          Archive
+          归档
         
       </a>
     
@@ -238,7 +238,7 @@
         href="/tags" 
         class="navbar-menu-item">
         
-          Tags
+          标签
         
       </a>
     
@@ -246,7 +246,7 @@
         href="/categories" 
         class="navbar-menu-item">
         
-          Categories
+          分类
         
       </a>
     
@@ -254,7 +254,7 @@
         href="/about" 
         class="navbar-menu-item">
         
-          About
+          关于
         
       </a>
     
@@ -262,7 +262,15 @@
         href="/links" 
         class="navbar-menu-item">
         
-          Friends
+          友链
+        
+      </a>
+    
+      <a 
+        href="http://lzreload.com/en/" 
+        class="navbar-menu-item">
+        
+          English
         
       </a>
     
@@ -313,7 +321,7 @@
     
     
       <span class="dot"></span>
-      <span>2.4k words</span>
+      <span>2.4k 字</span>
     
   </div>
   
@@ -617,8 +625,8 @@ Cgroup Version: <span class="token number">1</span>
           <span style="font-weight: bold;">文章链接：</span><a 
             target="_blank" 
             rel="nofollow noopener noreferrer" 
-            href="http://example.com/2021/09/14/Kubernetes%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/">
-            http://example.com/2021/09/14/Kubernetes%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/
+            href="http://lzreload.com/2021/09/14/Kubernetes%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/">
+            http://lzreload.com/2021/09/14/Kubernetes%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/
           </a>
         </p>
         <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
@@ -627,20 +635,6 @@ Cgroup Version: <span class="token number">1</span>
   </div>
 </article>
 <div class="nav">
-  
-    <div class="nav-item-prev">
-      <a 
-        href="/2022/04/15/Golang-Heap/" 
-        class="nav-link">
-        <i class="iconfont icon-left nav-prev-icon"></i>
-        <div>
-          <div class="nav-label">Prev</div>
-          
-            <div class="nav-title">Go: About package heap </div>
-          
-        </div>
-      </a>
-    </div>
   
   
 </div>
@@ -652,7 +646,7 @@ Cgroup Version: <span class="token number">1</span>
   <i 
     class="iconfont icon-menu" 
     style="padding-right: 2px;">
-  </i>TOC
+  </i>目录
 </div>
 <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA-Master-%E8%8A%82%E7%82%B9"><span class="toc-text">搭建 Master 节点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85-kubeadm-%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7"><span class="toc-text">#1 安装 kubeadm 以及相关工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8-kubeadm-%E5%AE%89%E8%A3%85-Master-%E8%8A%82%E7%82%B9"><span class="toc-text">#2 使用 kubeadm 安装 Master 节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85%E7%BD%91%E7%BB%9C%E6%8F%92%E4%BB%B6-Flannel"><span class="toc-text">#3 安装网络插件 Flannel</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA-Node-%E8%8A%82%E7%82%B9"><span class="toc-text">搭建 Node 节点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">错误及解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-docker-%E8%BF%9E%E6%8E%A5-Docker-daemon-socket-%E5%A4%B1%E8%B4%A5"><span class="toc-text">#1 docker 连接 Docker daemon socket 失败</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Kubelet-%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5"><span class="toc-text">#2 Kubelet 启动失败</span></a></li></ol></li></ol>
 </div></main>
@@ -673,20 +667,20 @@ Cgroup Version: <span class="token number">1</span>
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>2</span>
-    <span>Posts</span>
+    <span>1</span>
+    <span>文章</span>
   </a>
   <a 
     class="author-categories-count" 
     href="/categories">
     <span>0</span>
-    <span>Categories</span>
+    <span>分类</span>
   </a>
   <a 
     class="author-tags-count" 
     href="/tags">
-    <span>2</span>
-    <span>Tags</span>
+    <span>1</span>
+    <span>标签</span>
   </a>
 </div>
 
@@ -700,7 +694,7 @@ Cgroup Version: <span class="token number">1</span>
   <i 
     class="iconfont icon-menu" 
     style="padding-right: 2px;">
-  </i>TOC
+  </i>目录
 </div>
 <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA-Master-%E8%8A%82%E7%82%B9"><span class="toc-text">搭建 Master 节点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85-kubeadm-%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7"><span class="toc-text">#1 安装 kubeadm 以及相关工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8-kubeadm-%E5%AE%89%E8%A3%85-Master-%E8%8A%82%E7%82%B9"><span class="toc-text">#2 使用 kubeadm 安装 Master 节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85%E7%BD%91%E7%BB%9C%E6%8F%92%E4%BB%B6-Flannel"><span class="toc-text">#3 安装网络插件 Flannel</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA-Node-%E8%8A%82%E7%82%B9"><span class="toc-text">搭建 Node 节点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">错误及解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-docker-%E8%BF%9E%E6%8E%A5-Docker-daemon-socket-%E5%A4%B1%E8%B4%A5"><span class="toc-text">#1 docker 连接 Docker daemon socket 失败</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Kubelet-%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5"><span class="toc-text">#2 Kubelet 启动失败</span></a></li></ol></li></ol>
       </div>
@@ -713,7 +707,7 @@ Cgroup Version: <span class="token number">1</span>
     <i 
       class="iconfont icon-fenlei" 
       style="padding-right: 2px;">
-    </i>Categories
+    </i>分类
   </div>
   <div class="categories-list">
     
@@ -727,7 +721,7 @@ Cgroup Version: <span class="token number">1</span>
     <i 
       class="iconfont icon-biaoqian" 
       style="padding-right: 2px;">
-    </i>hot tags
+    </i>热门标签
   </div>
   <div class="tags-list">
     
@@ -735,12 +729,6 @@ Cgroup Version: <span class="token number">1</span>
         href="/tags/Kubernetes/" 
         title="Kubernetes">
         <div class="tags-list-item">Kubernetes</div>
-      </a>
-    
-      <a 
-        href="/tags/Golang/" 
-        title="Golang">
-        <div class="tags-list-item">Golang</div>
       </a>
     
   </div>
@@ -759,7 +747,7 @@ Cgroup Version: <span class="token number">1</span>
   <i 
     class="iconfont icon-menu" 
     style="padding-right: 2px;">
-  </i>TOC
+  </i>目录
 </div>
 <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA-Master-%E8%8A%82%E7%82%B9"><span class="toc-text">搭建 Master 节点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85-kubeadm-%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7"><span class="toc-text">#1 安装 kubeadm 以及相关工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8-kubeadm-%E5%AE%89%E8%A3%85-Master-%E8%8A%82%E7%82%B9"><span class="toc-text">#2 使用 kubeadm 安装 Master 节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85%E7%BD%91%E7%BB%9C%E6%8F%92%E4%BB%B6-Flannel"><span class="toc-text">#3 安装网络插件 Flannel</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA-Node-%E8%8A%82%E7%82%B9"><span class="toc-text">搭建 Node 节点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">错误及解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-docker-%E8%BF%9E%E6%8E%A5-Docker-daemon-socket-%E5%A4%B1%E8%B4%A5"><span class="toc-text">#1 docker 连接 Docker daemon socket 失败</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Kubelet-%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5"><span class="toc-text">#2 Kubelet 启动失败</span></a></li></ol></li></ol>
     </article>
@@ -771,14 +759,9 @@ Cgroup Version: <span class="token number">1</span>
     <i 
       class="iconfont icon-wenzhang_huaban" 
       style="padding-right: 2px;">
-    </i>Recent Posts
+    </i>最近文章
   </div>
   <div class="recent-posts-list">
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-04-15</div>
-        <a href="/2022/04/15/Golang-Heap/"><div class="recent-posts-item-content">Go: About package heap</div></a>
-      </div>
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-09-14</div>
