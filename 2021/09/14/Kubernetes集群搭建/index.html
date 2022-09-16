@@ -352,7 +352,7 @@
     id="section" 
     class="post-content">
     <p>这次打算尝试使用<code>kubeadm</code>来从头搭建一个<code>Kubernetes集群</code>，并且记录下整个过程以及中途遇到的问题。</p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>这次的搭建需要两台虚拟机，一台作为<code>Master节点</code>而另一台作为<code>Node节点</code>方便后续进行更多的集群相关的测试。</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>这次的搭建需要两台虚拟机，一台作为<code>Master节点</code>而另一台作为<code>Worker节点</code>, 方便后续进行更多的集群相关的测试。</p>
 <p>云服务器：</p>
 <ul>
 <li>  AWS t2.large(2vCPU 8GiB) *2</li>
@@ -720,7 +720,7 @@ Cgroup Version: <span class="token number">1</span>
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>2</span>
+    <span>3</span>
     <span>文章</span>
   </a>
   <a 
@@ -779,15 +779,15 @@ Cgroup Version: <span class="token number">1</span>
   <div class="tags-list">
     
       <a 
-        href="/tags/Kubernetes/" 
-        title="Kubernetes">
-        <div class="tags-list-item">Kubernetes</div>
-      </a>
-    
-      <a 
         href="/tags/Golang/" 
         title="Golang">
         <div class="tags-list-item">Golang</div>
+      </a>
+    
+      <a 
+        href="/tags/Kubernetes/" 
+        title="Kubernetes">
+        <div class="tags-list-item">Kubernetes</div>
       </a>
     
   </div>
@@ -821,6 +821,11 @@ Cgroup Version: <span class="token number">1</span>
     </i>最近文章
   </div>
   <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2022-09-16</div>
+        <a href="/2022/09/16/Docker-NetWork-1/"><div class="recent-posts-item-content">Docker-NetWork-1</div></a>
+      </div>
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-04-15</div>
